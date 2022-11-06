@@ -24,8 +24,8 @@ const TopArtistsList = () => {
   }, []);
 
   return (
-    <main>
-      <h1>Top Artists List</h1>
+    <main className="topArtists container">
+      <h1 className="topArtists__title">Top Artists List</h1>
       {artists && artists.map((artist) => <Artist artist={artist} key={uuid()} />)}
     </main>
   );

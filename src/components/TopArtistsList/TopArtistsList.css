@@ -1,0 +1,25 @@
+.topArtists {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.topArtists__title {
+  margin-bottom: 20px;
+}
+
+/* responsive design */
+
+@media (max-width: 920px) {
+  .topArtists {
+    margin: 20px 80px;
+  }
+}
+
+@media (max-width: 640px) {
+  .topArtists {
+    margin: 20px 30px;
+  }
+}
