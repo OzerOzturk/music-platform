@@ -13,7 +13,7 @@ const TopArtistsList = () => {
         const response = await axios.get(
           `http://ws.audioscrobbler.com/2.0/?method=chart.gettopartists&api_key=${process.env.REACT_APP_API_KEY}&format=json`
         );
-        console.log(response.data.artists);
+        //console.log(response.data.artists.artist);
         setArtists(response.data.artists.artist);
       } catch (error) {
         console.error(error.message);
