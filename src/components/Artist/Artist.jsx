@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './Artist.css';
+import { Link } from 'react-router-dom';
 
 const Artist = ({ artist }) => {
   return (
@@ -11,7 +12,9 @@ const Artist = ({ artist }) => {
           alt="Image of Artist"
           className="artistCard__info__image"
         />
-        <p className="artistCard__info__name">{artist.name} </p>
+        <Link to={`/detail/${artist.mbid}`}>
+          <p className="artistCard__info__name">{artist.name} </p>
+        </Link>
       </section>
       <section className="artistCard__statistics">
         <p>Listeners: {artist.listeners}</p>

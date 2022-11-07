@@ -28,6 +28,12 @@
 .artistCard__info__name {
   font-size: 1.1rem;
   font-weight: 600;
+  letter-spacing: 1px;
+  transition: all 0.2s ease-in;
+}
+
+.artistCard__info__name:hover {
+  letter-spacing: 2px;
 }
 
 .artistCard__statistics > p {

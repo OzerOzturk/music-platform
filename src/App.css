@@ -8,3 +8,7 @@
 .container {
   margin: 0 220px;
 }
+
+a {
+  text-decoration: none;
+}

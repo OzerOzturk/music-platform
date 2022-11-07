@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router';
 import './ArtistDetail.css';
 import axios from 'axios';
 import { v4 as uuid } from 'uuid';
@@ -8,11 +9,13 @@ const ArtistDetail = () => {
   const [albums, setAlbums] = useState([]);
   const [tracks, setTracks] = useState([]);
 
+  const { mbid } = useParams();
+
   useEffect(() => {
     const fetchAlbum = async () => {
       try {
         const response = await axios.get(
-          `http://ws.audioscrobbler.com/2.0/?method=artist.gettopalbums&artist=cher&api_key=${process.env.REACT_APP_API_KEY}&format=json`
+          `http://ws.audioscrobbler.com/2.0/?method=artist.gettopalbums&artist=cher&api_key=${process.env.REACT_APP_API_KEY}&mbid=${mbid}&format=json`
         );
         //console.log(response.data.topalbums.album);
         const albumsList = response.data.topalbums.album;
@@ -37,7 +40,7 @@ const ArtistDetail = () => {
     const fetchTrack = async () => {
       try {
         const response = await axios.get(
-          `http://ws.audioscrobbler.com/2.0/?method=artist.gettoptracks&artist=cher&api_key=${process.env.REACT_APP_API_KEY}&format=json`
+          `http://ws.audioscrobbler.com/2.0/?method=artist.gettoptracks&artist=cher&api_key=${process.env.REACT_APP_API_KEY}&mbid=${mbid}&format=json`
         );
         //console.log(response.data.toptracks.track);
         const trackList = response.data.toptracks.track;

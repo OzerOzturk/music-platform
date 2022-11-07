@@ -1,5 +1,6 @@
 .artistdetail {
   display: flex;
+  margin-top: 40px;
 }
 
 .artistdetail__section {
