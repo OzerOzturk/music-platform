@@ -5,7 +5,7 @@ import { BsPlayCircle } from 'react-icons/bs';
 
 const Header = ({ changeTheme }) => {
   return (
-    <header className="header">
+    <header data-testid="valid-header" className="header">
       <section className="header__main">
         <BsPlayCircle size={40} />
         <h1 className="header__main__title">Music Platform</h1>

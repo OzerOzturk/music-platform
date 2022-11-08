@@ -1,8 +1,12 @@
-import { render, screen } from '@testing-library/react';
+import { render, cleanup } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+describe('App component', () => {
+  afterEach(() => cleanup());
+
+  test('should have secondary background color', () => {
+    const { getByTestId } = render(<App />);
+    const Container = getByTestId('app-container');
+    expect(Container).toHaveStyle('background-color:#FFFF');
+  });
 });

@@ -10,7 +10,10 @@ function App() {
   const [{ theme }, changeTheme] = useContext(ThemeContext);
 
   return (
-    <div className="App" style={{ backgroundColor: theme.backgroundColor, color: theme.color }}>
+    <div
+      data-testid="app-container"
+      className="App"
+      style={{ backgroundColor: theme.backgroundColor, color: theme.color }}>
       <Header changeTheme={changeTheme} />
       <Routes>
         <Route path="/" element={<TopArtistsList />} />
